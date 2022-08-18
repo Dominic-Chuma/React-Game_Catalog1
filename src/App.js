@@ -38,10 +38,10 @@ function App() {
         </Row>
         <Row className="g-5">
           {Array.from({ length: 5 }).map((_, idx) => (
-            <Col  sm='6' md='4' lg='4'>
+            <Col sm='6' md='4' lg='4'>
               <Card border='light'>
               {console.log(idx)} 
-                <Card.Img variant="top" src={"Pictures/logo" + ++idx + ".png"} style={{width: "auto",height: "auto", objectFit: "fill"}} /> {/*Inline Style tis for Min & Max Height*/}
+                <Card.Img variant="top" src={"Pictures/logo" + ++idx + ".png"}  /> {/*Inline Style tis for Min & Max Height*/}
                   <Card.Body>
                     {/* <Card.Title>Card title !</Card.Title> */}
                     {/* <Card.Text>
