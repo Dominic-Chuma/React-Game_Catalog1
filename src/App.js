@@ -33,7 +33,7 @@ function App() {
         {/* <Row style={{textAlign: "center"}}> */}
         <Row className='justify-content-md-center text-center'  style={{textAlign: "center"}}> {/*Inline style Row (Height, Top/bottom Margin, Padding{Where necessary})*/}
           <Col md='auto' >
-            <h1>Game Catalogue</h1> {/*Inline style the font*/}
+            <h1>Pick your Game</h1> {/*Inline style the font*/}
           </Col>
         </Row>
         <Row className="g-5">
@@ -41,7 +41,7 @@ function App() {
             <Col  sm='6' md='4' lg='4'>
               <Card border='light'>
               {console.log(idx)} 
-                <Card.Img variant="top" src={"Pictures/logo" + ++idx + ".png"} /> {/*Inline Style tis for Min & Max Height*/}
+                <Card.Img variant="top" src={"Pictures/logo" + ++idx + ".png"} style={{width: "auto",height: "auto", objectFit: "fill"}} /> {/*Inline Style tis for Min & Max Height*/}
                   <Card.Body>
                     {/* <Card.Title>Card title !</Card.Title> */}
                     {/* <Card.Text>
