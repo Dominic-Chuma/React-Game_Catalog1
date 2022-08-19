@@ -1,0 +1,22 @@
+.Card:hover{
+    border: 1px solid rgb(211, 209, 209) !important;
+    /* border: 1.5px solid rgb(185, 182, 182); */
+    cursor: pointer;
+    box-shadow: 10px 5px 10px rgb(177, 191, 196);
+}
+
+.CardImage:hover{
+    transition: transform 2s;
+    transform: scale(1.1,1.1);
+    transition-timing-function: ease;
+}
+
+.CardFooter:hover{
+    /* box-shadow: 10px 5px 10px rgb(177, 191, 196); */
+    border: 1.7px solid rgb(211, 208, 208);
+    text-shadow: 0.5px 0.5px 1.7px #1f1e1e;
+    font-size: 1.05em;
+    transition: border 0.5s, text-shadow 0.5s, font-size 1s;
+    /* transition: border 0.5s, font-size 1s; */
+    transition-timing-function: ease;
+}

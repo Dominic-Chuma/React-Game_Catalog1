@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
+import './App_new.css';
 
 // Bootstrap Components
 import Container from 'react-bootstrap/Container';
@@ -39,9 +40,9 @@ function App() {
         <Row className="g-5">
           {Array.from({ length: 5 }).map((_, idx) => (
             <Col sm='6' md='4' lg='4'>
-              <Card border='light'>
+              <Card border='light' className='Card'>
               {console.log(idx)} 
-                <Card.Img variant="top" src={"Pictures/logo" + ++idx + ".png"}  /> {/*Inline Style tis for Min & Max Height*/}
+                <Card.Img variant="top" src={"Pictures/logo" + ++idx + ".png"} className='CardImage' /> {/*Inline Style tis for Min & Max Height*/}
                   <Card.Body>
                     {/* <Card.Title>Card title !</Card.Title> */}
                     {/* <Card.Text>
@@ -49,7 +50,7 @@ function App() {
                       lead-in to additional content. This content is a little bit
                       longer.
                     </Card.Text> */}
-                   <Card.Footer className="text-muted text-center text-sm-center">{gameName[--idx]}</Card.Footer> {/*Use text-center intead of text-sm-center*/}
+                   <Card.Footer className="text-muted text-center text-sm-center CardFooter">{gameName[--idx]}</Card.Footer> {/*Use text-center intead of text-sm-center*/}
                 </Card.Body>
               </Card>
             </Col>
