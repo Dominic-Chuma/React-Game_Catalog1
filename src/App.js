@@ -32,9 +32,9 @@ function App() {
       <Container className='Container'> {/*Remember to inline style the container (Top & Buttom margin)*/}
         {/* <Row xs={1} md={2} className="g-4">  */}
         {/* <Row style={{textAlign: "center"}}> */}
-          <Row className='justify-content-md-center text-center'  style={{textAlign: "center"}}> {/*Inline style Row (Height, Top/bottom Margin, Padding{Where necessary})*/}
+          <Row className='justify-content-md-center text-center Row1' style={{textAlign: "center"}}> {/*Inline style Row (Height, Top/bottom Margin, Padding{Where necessary})*/}
             <Col md='auto' >
-              <h1>Pick your Game</h1> {/*Inline style the font*/}
+              <h1><span> [ </span> Pick your Game <span> ] </span></h1> {/*Inline style the font*/}
             </Col>
           </Row>
           <Row className="g-5">

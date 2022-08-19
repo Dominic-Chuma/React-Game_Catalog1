@@ -23,7 +23,16 @@
 
 .Container{
     /* margin: 10%; */
-    border: 1px solid rgb(134, 96, 96);
-    margin: 10%;
-    background: rgb(255, 255, 255) !important;
+    border: 1px solid rgb(219, 186, 186);
+    border-radius: 15px;
+    margin: 5%;
+    padding-top: 10px;
+    padding-bottom: 35px;
+    background: rgb(206, 236, 122) !important;
+    /* background: rgb(231, 233, 126) !important; */
+}
+
+.Row1{
+    margin: 10px;
+    color: #815a5a;
 }
