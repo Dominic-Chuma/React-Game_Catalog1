@@ -11,6 +11,11 @@ import Row from 'react-bootstrap/Row';
 
 function App() {
   const gameName = ['Call of Duty', 'Mortal Combat', 'FIFA', 'Just Cause', 'Apex Legend'];
+  
+  // Modal Section.........
+  // Start by creating state for the Modal....
+
+  // Modal Section End....
 
   return (
     <div className="App">
@@ -54,7 +59,6 @@ function App() {
                   </Card.Body>
                 </Card>
               </Col>
-            
             ))}
           </Row>
       </Container>
