@@ -36,3 +36,9 @@
     margin: 10px;
     color: #815a5a;
 }
+
+.modal-header{
+    color:red;
+    text-align: center !important;
+    /* justify-content: center !important; */
+}

@@ -62,4 +62,4 @@ let multiple = function (number, total) {
     }
 }
 
-multiple(5,30);
+multiple(7,30);

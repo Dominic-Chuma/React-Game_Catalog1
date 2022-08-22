@@ -9,6 +9,22 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 import Modal from 'react-bootstrap/Modal';
+import React, { useState } from 'react';
+
+
+// Modal Section Start......
+function MyModal(props){
+  return (
+    <Modal {...props} centered  aria-labelledby="contained-modal-title-vcenter" >
+      <Modal.Header closeButton className='modal-header' >
+        {/* <Modal.Title id="contained-modal-title-vcenter" >
+          Modal heading
+        </Modal.Title> */}
+      </Modal.Header>
+    </Modal>
+  );
+}
+// Modal Section End....
 
 
 function App() {
@@ -16,10 +32,8 @@ function App() {
   
   
   // Start by creating state for the Modal....
-
-  // Modal Section Start......
-
-  // Modal Section End....
+  const [showModal, setShowModal] = useState(false);
+  
 
   return (
     <div className="App">
@@ -59,11 +73,14 @@ function App() {
                         lead-in to additional content. This content is a little bit
                         longer.
                       </Card.Text> */}
-                    <Card.Footer className="text-muted text-center text-sm-center CardFooter">{gameName[--idx]}</Card.Footer> {/*Use text-center intead of text-sm-center*/}
+                      {/* <someModal/> */}
+                    <Card.Footer className="text-muted text-center text-sm-center CardFooter" onClick={() => setShowModal(true)} >{gameName[--idx]}</Card.Footer> {/*Use text-center intead of text-sm-center*/}
                   </Card.Body>
                 </Card>
               </Col>
             ))}
+            <MyModal show={showModal} onHide={() => setShowModal(false)} />
+            
           </Row>
       </Container>
     </div>
