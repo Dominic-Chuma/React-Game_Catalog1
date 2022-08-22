@@ -12,13 +12,16 @@ import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
 import multiple from './External_functions/function1';
 
-// import multiple from './External_functions/function1';
+
+// Initialize some variables and Constants....
+let pics = []; // A variable for an array of pic IDs to be shown in Modal
+
 
 
 // Modal Section Start......
 function MyModal(props){
   return (
-    <Modal {...props} centered  aria-labelledby="contained-modal-title-vcenter" >
+    <Modal {...props} centered size='lg' restoreFocus={true} aria-labelledby="contained-modal-title-vcenter" >
       <Modal.Header closeButton className='modal-header' >
         {/* <Modal.Title id="contained-modal-title-vcenter" >
           Modal heading
@@ -30,17 +33,15 @@ function MyModal(props){
         ))} */}
         <Container>
           <Row>
-            {/* {props.numbs.map((item) => (
-              
-            ))} */}
-            <Col sm='6' md='4' lg='4'>
-              {/* <Card border='light' > */}
-                {/* <Card.Img  variant='top' src={'Pictures/New/' + props.numbs[0] + '.png'} /> */}
-                {/* <Card.Img variant='top' />
-              </Card> */}
-              <h1> I hate y'all </h1>
-            </Col>
-            
+            {props.numbs.map((item) => (
+              <Col sm='6' md='4' lg='4'>
+                {/* <Card border='light' >
+                  <Card.Img  variant='top' src={'Pictures/New/' + item + '.png'} />
+                  <Card.Img variant='top' />
+                </Card> */}
+                <h1> I hate y'all </h1>
+              </Col>
+            ))}
           </Row>
         </Container>
       </Modal.Body>
@@ -50,9 +51,11 @@ function MyModal(props){
 // Modal Section End....
 
 
+
+
 function App() {
   const gameName = ['Call of Duty', 'Mortal Combat', 'FIFA', 'Just Cause', 'Apex Legend'];
-  let pics = []; // A variable for an array of pic IDs to be shown in Modal
+  // let pics = []; // A variable for an array of pic IDs to be shown in Modal
   
   
   // Start by creating state for the Modal....
@@ -84,7 +87,7 @@ function App() {
                         setShowModal(true); 
                         console.log("This is " + ++idx); 
                         pics = multiple(idx); // Pics variable assigned a value..
-                        console.log("These are them. " + pics);
+                        // console.log("These are them. " + pics);
                     }} >{gameName[--idx]}</Card.Footer> {/*Use text-center intead of text-sm-center*/}
                   </Card.Body>
                 </Card>
