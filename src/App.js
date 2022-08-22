@@ -10,6 +10,9 @@ import Row from 'react-bootstrap/Row';
 
 import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
+import multiple from './External_functions/function1';
+
+// import multiple from './External_functions/function1';
 
 
 // Modal Section Start......
@@ -21,6 +24,26 @@ function MyModal(props){
           Modal heading
         </Modal.Title> */}
       </Modal.Header>
+      <Modal.Body>
+        {/* {Array.from(props.numbs).map((_, index) => (
+          <h1>{_}</h1>
+        ))} */}
+        <Container>
+          <Row>
+            {/* {props.numbs.map((item) => (
+              
+            ))} */}
+            <Col sm='6' md='4' lg='4'>
+              {/* <Card border='light' > */}
+                {/* <Card.Img  variant='top' src={'Pictures/New/' + props.numbs[0] + '.png'} /> */}
+                {/* <Card.Img variant='top' />
+              </Card> */}
+              <h1> I hate y'all </h1>
+            </Col>
+            
+          </Row>
+        </Container>
+      </Modal.Body>
     </Modal>
   );
 }
@@ -29,29 +52,16 @@ function MyModal(props){
 
 function App() {
   const gameName = ['Call of Duty', 'Mortal Combat', 'FIFA', 'Just Cause', 'Apex Legend'];
+  let pics = []; // A variable for an array of pic IDs to be shown in Modal
   
   
   // Start by creating state for the Modal....
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false); // For opening & closing the Modal
+  // const [id, setID] = useState([]); // For the IDs that will be past to te Modal
   
 
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      
       <Container className='Container'> {/*Remember to inline style the container (Top & Buttom margin)*/}
         {/* <Row xs={1} md={2} className="g-4">  */}
         {/* <Row style={{textAlign: "center"}}> */}
@@ -66,23 +76,25 @@ function App() {
                 <Card border='light' className='Card'>
                 {console.log(idx)} 
                   <Card.Img variant="top" src={"Pictures/logo" + ++idx + ".png"} className='CardImage' /> {/*Inline Style tis for Min & Max Height*/}
-                    <Card.Body>
-                      {/* <Card.Title>Card title !</Card.Title> */}
-                      {/* <Card.Text>
-                        This is a longer card with supporting text below as a natural
-                        lead-in to additional content. This content is a little bit
-                        longer.
-                      </Card.Text> */}
-                      {/* <someModal/> */}
-                    <Card.Footer className="text-muted text-center text-sm-center CardFooter" onClick={() => setShowModal(true)} >{gameName[--idx]}</Card.Footer> {/*Use text-center intead of text-sm-center*/}
+                  <Card.Body>
+                      
+                    <Card.Footer id={idx} 
+                      className="text-muted text-center text-sm-center CardFooter" 
+                      onClick={() => {
+                        setShowModal(true); 
+                        console.log("This is " + ++idx); 
+                        pics = multiple(idx); // Pics variable assigned a value..
+                        console.log("These are them. " + pics);
+                    }} >{gameName[--idx]}</Card.Footer> {/*Use text-center intead of text-sm-center*/}
                   </Card.Body>
                 </Card>
               </Col>
             ))}
-            <MyModal show={showModal} onHide={() => setShowModal(false)} />
             
           </Row>
       </Container>
+      <MyModal numbs={pics} show={showModal} onHide={() => setShowModal(false)} />; 
+      {console.log(pics)}
     </div>
   );
 }
