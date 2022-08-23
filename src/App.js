@@ -34,7 +34,7 @@ function MyModal(props){
         <Container>
           <Row>
             {props.numbs.map((item) => (
-              <Col sm='6' md='4' lg='4'>
+              <Col sm='6' md='4' lg='4' key={item}> {/* Remember to add a Key*/}
                 <Card border='light' >
                   <Card.Img  variant='top' src={'Pictures/New/' + item + '.png'} />
                   <Card.Img variant='top' />
@@ -75,8 +75,8 @@ function App() {
           </Row>
           <Row className="g-5">
             {Array.from({ length: 5 }).map((_, idx) => (
-              <Col sm='6' md='4' lg='4'>
-                <Card border='light' className='Card'>
+              <Col sm='6' md='4' lg='4' key={idx} > {/* Remember should always have a Key*/}
+                <Card border='light' className='Card'  >
                 {console.log(idx)} 
                   <Card.Img variant="top" src={"Pictures/logo" + ++idx + ".png"} className='CardImage' /> {/*Inline Style tis for Min & Max Height*/}
                   <Card.Body>
