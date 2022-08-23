@@ -80,7 +80,7 @@ function App() {
         if (gameNames.includes(item.name.slice(0, item.name.search(/\d/) - 2))){
           return null;
         }else{
-          return (gameNames.push(item.name.slice(0, item.name.search(/\d/) - 2)), (requestedData)); // This is the last part of where I stopped
+          return (gameNames.push(item.name.slice(0, item.name.search(/\d/) - 2)), (requestedData)); // This is the last part, where I stopped
         }
         
       })
