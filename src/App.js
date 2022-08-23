@@ -21,13 +21,13 @@ let pics = []; // A variable for an array of pic IDs to be shown in Modal
 // Modal Section Start......
 function MyModal(props){
   return (
-    <Modal {...props} centered size='lg' restoreFocus={true} aria-labelledby="contained-modal-title-vcenter" >
+    <Modal {...props} centered scrollable='true' size='lg' restoreFocus={true} aria-labelledby="contained-modal-title-vcenter" >
       <Modal.Header closeButton className='modal-header' >
         {/* <Modal.Title id="contained-modal-title-vcenter" >
           Modal heading
         </Modal.Title> */}
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body  >
         {/* {Array.from(props.numbs).map((_, index) => (
           <h1>{_}</h1>
         ))} */}
@@ -35,10 +35,10 @@ function MyModal(props){
           <Row>
             {props.numbs.map((item) => (
               <Col sm='6' md='4' lg='4'>
-                {/* <Card border='light' >
+                <Card border='light' >
                   <Card.Img  variant='top' src={'Pictures/New/' + item + '.png'} />
                   <Card.Img variant='top' />
-                </Card> */}
+                </Card>
                 <h1> I hate y'all </h1>
               </Col>
             ))}
