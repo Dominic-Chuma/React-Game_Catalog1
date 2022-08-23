@@ -9,7 +9,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 import Modal from 'react-bootstrap/Modal';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import multiple from './External_functions/function1';
 
 
@@ -55,13 +55,27 @@ function MyModal(props){
 
 function App() {
   const gameName = ['Call of Duty', 'Mortal Combat', 'FIFA', 'Just Cause', 'Apex Legend'];
-  // let pics = []; // A variable for an array of pic IDs to be shown in Modal
+  
   
   
   // Start by creating state for the Modal....
   const [showModal, setShowModal] = useState(false); // For opening & closing the Modal
-  // const [id, setID] = useState([]); // For the IDs that will be past to te Modal
-  
+  // State for the fetched REST API data.....
+  const [value, setValue] = useState([]); // For the IDs that will be past to te Modal
+  // var gameNames = [];
+
+  useEffect(() =>{
+    fetch("https://projects.erlimited.com.ng/gamelist.php", {method:"GET"})
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("This is the raw data: " + data);
+      setValue(data);
+      console.log("This is value: " + value);
+    })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+
+
 
   return (
     <div className="App">
