@@ -62,16 +62,31 @@ function App() {
   const [showModal, setShowModal] = useState(false); // For opening & closing the Modal
   // State for the fetched REST API data.....
   const [value, setValue] = useState([]); // For the IDs that will be past to te Modal
-  // var gameNames = [];
+  var gameNames = [];
 
   useEffect(() =>{
     fetch("https://projects.erlimited.com.ng/gamelist.php", {method:"GET"})
     .then((res) => res.json())
     .then((data) => {
-      console.log("This is the raw data: " + data);
-      setValue(data);
-      console.log("This is value: " + value);
+      console.log(data);
+      const requestedData = data;
+      setValue(requestedData);
+      console.log(value);
+      // console.log(requestedData);
+
+      // Loop through the result to bring out all unique game names.....
+      requestedData.map((item) => {
+
+        if (gameNames.includes(item.name.slice(0, item.name.search(/\d/) - 2))){
+          return null;
+        }else{
+          return (gameNames.push(item.name.slice(0, item.name.search(/\d/) - 2)), (requestedData)); // This is the last part of where I stopped
+        }
+        
+      })
+      
     })
+  
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
