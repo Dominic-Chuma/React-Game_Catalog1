@@ -15,6 +15,8 @@ import multiple from './External_functions/function1';
 
 // Initialize some variables and Constants....
 let pics = []; // A variable for an array of pic IDs to be shown in Modal
+var gameNames = [];
+var gameVersion = [];
 
 
 
@@ -33,13 +35,16 @@ function MyModal(props){
         ))} */}
         <Container>
           <Row>
-            {props.numbs.map((item) => (
-              <Col sm='6' md='4' lg='4' key={item}> {/* Remember to add a Key*/}
+            {props.numbs.map((item, index) => (
+              <Col sm='6' md='4' lg='4' key={index}> {/* Remember to add a Key*/}
                 <Card border='light' >
                   <Card.Img  variant='top' src={'Pictures/New/' + item + '.png'} />
-                  <Card.Img variant='top' />
+                  {/* <Card.Img variant='top' /> */}
+                  <Card.Body>
+                    <Card.Footer className='text-center' >{gameVersion[index]}</Card.Footer>
+                  </Card.Body>
                 </Card>
-                <h1> I hate y'all </h1>
+                {/* <h1> I hate y'all </h1> */}
               </Col>
             ))}
           </Row>
@@ -62,7 +67,7 @@ function App() {
   const [showModal, setShowModal] = useState(false); // For opening & closing the Modal
   // State for the fetched REST API data.....
   const [value, setValue] = useState([]); // For the IDs that will be past to te Modal
-  var gameNames = [];
+
 
   useEffect(() =>{
     fetch("https://projects.erlimited.com.ng/gamelist.php", {method:"GET"})
@@ -76,15 +81,24 @@ function App() {
 
       // Loop through the result to bring out all unique game names.....
       requestedData.map((item) => {
-
-        if (gameNames.includes(item.name.slice(0, item.name.search(/\d/) - 2))){
-          return null;
+        // Search for game names and slice the names from the resultant string
+        if (gameNames.includes(item.name.slice(0, item.name.search(/\d/) - 2))){ // Check if the sliced name is in the gamenames list
+          ; // If its there, do nothing
         }else{
-          return (gameNames.push(item.name.slice(0, item.name.search(/\d/) - 2)), (requestedData)); // This is the last part, where I stopped
+          gameNames.push(item.name.slice(0, item.name.search(/\d/) - 2))
         }
+        // Get out the year(version) of the game...
+        if (gameVersion.includes(parseInt(item.version))){
+          ; // Do nothing
+        }else{
+          gameVersion.push(parseInt(item.version));
+        }
+
+        return '';
         
       })
-      
+      console.log(gameNames);
+      console.log(gameVersion);
     })
   
   // eslint-disable-next-line react-hooks/exhaustive-deps
