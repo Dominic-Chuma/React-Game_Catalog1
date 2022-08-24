@@ -14,7 +14,7 @@ import multiple from './External_functions/function1';
 
 
 // Initialize some variables and Constants....
-let pics = []; // A variable for an array of pic IDs to be shown in Modal
+let picsNumberList = []; // A variable for an array of pic IDs to be shown in Modal
 var gameNames = [];
 var gameVersion = [];
 
@@ -129,7 +129,7 @@ function App() {
                       onClick={() => {
                         setShowModal(true); 
                         console.log("This is " + ++idx); 
-                        pics = multiple(idx); // Pics variable assigned a value..
+                        picsNumberList = multiple(idx); // Pics variable assigned a value..
                         // console.log("These are them. " + pics);
                     }} >{gameNames[--idx]}</Card.Footer> {/*Use text-center intead of text-sm-center*/}
                   </Card.Body>
@@ -139,8 +139,8 @@ function App() {
             
           </Row>
       </Container>
-      <MyModal numbs={pics} show={showModal} onHide={() => setShowModal(false)} />; 
-      {console.log(pics)}
+      <MyModal numbs={picsNumberList} show={showModal} onHide={() => setShowModal(false)} />; 
+      {console.log(picsNumberList)}
     </div>
   );
 }
