@@ -39,7 +39,7 @@ function MyModal(props){
               <Col sm='6' md='4' lg='4' key={index}> {/* Remember to add a Key*/}
                 <Card border='light' >
                   <Card.Img  variant='top' src={'Pictures/New/' + item + '.png'} />
-                  {/* <Card.Img variant='top' /> */}
+                  
                   <Card.Body>
                     <Card.Footer className='text-center' >{gameVersion[index]}</Card.Footer>
                   </Card.Body>
@@ -59,7 +59,7 @@ function MyModal(props){
 
 
 function App() {
-  const gameName = ['Call of Duty', 'Mortal Combat', 'FIFA', 'Just Cause', 'Apex Legend'];
+  // const gameName = ['Call of Duty', 'Mortal Combat', 'FIFA', 'Just Cause', 'Apex Legend'];
   
   
   
@@ -131,7 +131,7 @@ function App() {
                         console.log("This is " + ++idx); 
                         pics = multiple(idx); // Pics variable assigned a value..
                         // console.log("These are them. " + pics);
-                    }} >{gameName[--idx]}</Card.Footer> {/*Use text-center intead of text-sm-center*/}
+                    }} >{gameNames[--idx]}</Card.Footer> {/*Use text-center intead of text-sm-center*/}
                   </Card.Body>
                 </Card>
               </Col>
