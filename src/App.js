@@ -113,7 +113,7 @@ function App() {
         {/* <Row style={{textAlign: "center"}}> */}
           <Row className='justify-content-md-center text-center Row1' style={{textAlign: "center"}}> {/*Inline style Row (Height, Top/bottom Margin, Padding{Where necessary})*/}
             <Col md='auto' >
-              <h1><strong> [ </strong> Pick your Game <strong> ] </strong></h1> {/*Inline style the font*/}
+              <h1><strong> [ </strong> Pick your Game!. <strong> ] </strong></h1> {/*Inline style the font*/}
             </Col>
           </Row>
           <Row className="g-5">
