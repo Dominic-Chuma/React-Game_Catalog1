@@ -34,7 +34,7 @@ function MyModal(props){
           <h1>{_}</h1>
         ))} */}
         <Container>
-          <Row>
+          <Row className="g-5"> {/*The gutter/gap was just included |This is where I stoped|*/}
             {props.numbs.map((item, index) => (
               <Col sm='6' md='4' lg='4' key={index}> {/* Remember to add a Key*/}
                 <Card border='light' >
