@@ -29,7 +29,7 @@ function MyModal(props){
           Modal heading
         </Modal.Title> */}
       </Modal.Header>
-      <Modal.Body  > {/*Start.... Try to change the Modal header & body backgroung colour*/}
+      <Modal.Body  > {/*Start... Try to change the Modal header & body backgroung colour*/}
         {/* {Array.from(props.numbs).map((_, index) => (
           <h1>{_}</h1>
         ))} */}
