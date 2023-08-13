@@ -73,7 +73,7 @@ function App() {
     fetch("https://projects.erlimited.com.ng/gamelist.php", {method:"GET"})
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      console.log("This is the returned Data >>>>", data);
       const requestedData = data;
       setValue(requestedData);
       console.log(value);
